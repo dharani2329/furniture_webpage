@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2E3D2E;
+    --accent: #D47A46;
+    --secondary: #506B50;
+    --offwhite: #F9F7F2;
+    --text: #1A241A;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    background-color: var(--offwhite);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.bg-accent { background-color: var(--accent); }
+.text-accent { color: var(--accent); }
+.bg-secondary { background-color: var(--secondary); }
+.text-secondary { color: var(--secondary); }
+
+/* Navigation */
+nav {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.btn-main {
+    background-color: var(--accent);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Hero Slider Section */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(46, 61, 46, 0.6), rgba(46, 61, 46, 0.3));
+    z-index: 5;
+}
+
+#hero-slider-track {
+    will-change: transform;
+}
+
+/* Cards */
+.furniture-card {
+    background: white;
+    border-bottom: 4px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.furniture-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(46, 61, 46, 0.05);
+}
+
+/* Modal Slow Animation */
+#furniture-modal {
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#modal-content {
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease;
+}
+
+/* Form Styling */
+input, textarea {
+    border-bottom: 2px solid rgba(46, 61, 46, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--offwhite);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
