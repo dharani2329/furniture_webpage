@@ -182,7 +182,7 @@ function openFurnitureModal(id) {
     const data = furnitureData[id];
     const modal = document.getElementById('furniture-modal');
     const content = document.getElementById('modal-body-content');
-    
+
     if (!data) return;
 
     content.innerHTML = `
