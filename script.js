@@ -62,31 +62,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const status = document.getElementById('form-status');
 
     if (form) {
-        form.onsubmit = async (e) => {
+        form.onsubmit = (e) => {
             e.preventDefault();
             const formData = new FormData(form);
-            status.textContent = "Sending...";
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+
+            const whatsappMessage = encodeURIComponent(
+                `*New Website Enquiry*\n\n` +
+                `*Name:* ${name}\n` +
+                `*Phone:* ${phone}\n` +
+                `*Message:* ${message}`
+            );
+
+            const whatsappUrl = `https://wa.me/919842571430?text=${whatsappMessage}`;
+
+            status.textContent = "Opening WhatsApp...";
             status.classList.remove('hidden', 'text-red-500', 'text-green-500');
             status.classList.add('text-primary');
 
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    status.textContent = "Thank you! We will contact you soon.";
-                    status.classList.replace('text-primary', 'text-green-500');
-                    form.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (error) {
-                status.textContent = "Oops! Something went wrong. Please try again.";
-                status.classList.replace('text-primary', 'text-red-500');
-            }
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                status.textContent = "Thank you! Our team will assist you on WhatsApp.";
+                status.classList.replace('text-primary', 'text-green-500');
+                form.reset();
+            }, 1000);
         };
     }
 
