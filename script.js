@@ -200,7 +200,7 @@ function openFurnitureModal(id) {
             </div>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#contact" onclick="closeFurnitureModal()" class="btn-main flex-1 text-center py-4">Enquire to Order</a>
-                <a href="https://wa.me/919842571430?text=Hi, I am interested in ${data.title}. (Product Image Reference: ${data.img})" target="_blank" class="px-6 py-4 border-2 border-primary/20 hover:bg-primary/5 transition-all rounded shadow-sm flex items-center justify-center gap-3">
+                <a href="https://wa.me/919842571430?text=${encodeURIComponent(`Hi, I am interested in ${data.title}. \n\nProduct Page: ${window.location.origin}\nProduct Image: ${window.location.origin}/${data.img}`)}" target="_blank" class="px-6 py-4 border-2 border-primary/20 hover:bg-primary/5 transition-all rounded shadow-sm flex items-center justify-center gap-3">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7 1 3.7 1.5 5.7 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0zm6.9 16.9c-.3.8-1.5 1.6-2.5 1.7-.7.1-1.6.2-4.6-1.1-3.8-1.6-6.3-5.4-6.5-5.7-.2-.3-1.6-2.2-1.6-4.1s1-2.9 1.4-3.3c.3-.4.8-.5 1.1-.5.3 0 .5 0 .8.1.3 0 .6-.1.9.6.3.8 1.1 2.6 1.2 2.8s.2.4.1.7c-.1.3-.2.5-.4.8-.2.3-.4.5-.6.8-.2.3-.4.6-.2.9s.9 1.5 1.9 2.4c1.3 1.2 2.4 1.5 2.7 1.7s.6.1.8-.1c.3-.3.8-.9 1-1.2.3-.3.6-.3.9-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.3.1 1.3-.2 2.1z"/></svg>
                     <span class="font-bold uppercase text-[10px] tracking-widest sm:hidden">WhatsApp US</span>
                 </a>
