@@ -19,16 +19,37 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-serif {
+h1,
+h2,
+h3,
+h4,
+.font-serif {
     font-family: 'Cormorant Garamond', serif;
 }
 
-.bg-primary { background-color: var(--primary); }
-.text-primary { color: var(--primary); }
-.bg-accent { background-color: var(--accent); }
-.text-accent { color: var(--accent); }
-.bg-secondary { background-color: var(--secondary); }
-.text-secondary { color: var(--secondary); }
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.bg-accent {
+    background-color: var(--accent);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
 
 /* Navigation */
 nav {
@@ -99,12 +120,14 @@ nav {
 }
 
 /* Form Styling */
-input, textarea {
+input,
+textarea {
     border-bottom: 2px solid rgba(46, 61, 46, 0.1);
     transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: var(--accent);
 }
 
